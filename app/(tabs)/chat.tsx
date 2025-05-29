@@ -1,6 +1,6 @@
 import { images } from '@/constants/images';
 import React from 'react';
-import { FlatList, Image, Text, TouchableOpacity, View } from 'react-native';
+import { FlatList, Image, SafeAreaView, Text, TouchableOpacity } from 'react-native';
 
 const chat = () => {
 
@@ -51,8 +51,8 @@ const chat = () => {
 
 
   return (
-    <View className='flex-1'>
-        <View className="relative h-44">
+    <SafeAreaView className='flex-1'>
+        <SafeAreaView className="relative h-44">
             <Image
             source={images.chatbanner}
             className="absolute top-0 left-0 w-full h-full"
@@ -61,8 +61,8 @@ const chat = () => {
             <Text className="absolute top-16 left-10 text-white text-3xl font-bold z-10">
             Messages
             </Text>
-        </View>
-        <View
+        </SafeAreaView>
+        <SafeAreaView
             className="flex-1 bg-dark pt-5"
             style={{
                 borderTopLeftRadius: 50,
@@ -90,7 +90,7 @@ const chat = () => {
                         className="w-14 h-14 rounded-full"
                         resizeMode="cover"
                     />
-                    <View className="ml-4 flex-1">
+                    <SafeAreaView className="ml-4 flex-1">
                         <Text
                         className="text-white font-semibold text-base"
                         numberOfLines={1}
@@ -105,12 +105,12 @@ const chat = () => {
                         >
                         {chat.recentText}
                         </Text>
-                    </View>
+                    </SafeAreaView>
                 </TouchableOpacity>
             )}
             />
-        </View>
-    </View>
+        </SafeAreaView>
+    </SafeAreaView>
   )
 }
 
